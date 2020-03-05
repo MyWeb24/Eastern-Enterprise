@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h4 class="mt-2 text-center text-muted">Add / Edit</h4>
+          </div>
+        </div>
+     <hr>
+        <div class="row">
+            <div class="col-md-12">
+            <input type="button" value="Add New" class="btn btn-outline-primary" (click)="onClickAdd()"></div>
+        </div>
+                   
+<div class="row">
+ <div class="col-md-12">       
+   <table class="table table-striped border border-primary mt-4 ">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Address1</th>
+        <th>Address2</th>
+        <th>Postal Code</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of my_data">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.phone}}</td>
+        <td *ngFor="let x of i.full_address">{{x.city}}</td>
+        <td *ngFor="let x of i.full_address">{{x.add1}}</td>
+        <td *ngFor="let x of i.full_address">{{x.add2}}</td>
+        <td *ngFor="let x of i.full_address">{{x.postal_code}}</td>
+        <td><input type="button" value="Edit" (click)="onEditClick(i.id)"/></td>
+      </tr>  
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+</div>
